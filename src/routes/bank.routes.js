@@ -5,9 +5,9 @@ const bankRoutes = express.Router();
 
 bankRoutes.get("/insertBankDetails", handlers.insertBankDetails);
 bankRoutes.get("/getBankNames", handlers.getBankNames);
-bankRoutes.get("/getBranchNames", handlers.getBranchNames);
-bankRoutes.get("/getIfsc", handlers.getIfsc);
-bankRoutes.get("/getBankDetails", handlers.getBankDetails);
+bankRoutes.get("/getBranchNames/:bankName", handlers.getBranchNames);
+bankRoutes.get("/getIfsc/:bankName/:branchName", handlers.getIfsc);
+bankRoutes.get("/getBankDetails/:ifsc", handlers.getBankDetails);
 
 module.exports = {
   bankRoutes,
