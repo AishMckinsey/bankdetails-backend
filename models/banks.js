@@ -7,21 +7,21 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate() {
       // define association here
     }
   }
   Banks.init(
     {
-      bank: DataTypes.STRING,
-      ifsc: DataTypes.STRING,
-      branch: DataTypes.STRING,
-      address: DataTypes.STRING,
-      city1: DataTypes.STRING,
-      city2: DataTypes.STRING,
-      state: DataTypes.STRING,
-      std_code: DataTypes.FLOAT,
-      phone: DataTypes.STRING,
+      BANK: DataTypes.STRING,
+      IFSC: DataTypes.STRING,
+      BRANCH: DataTypes.STRING,
+      ADDRESS: DataTypes.STRING,
+      CITY1: DataTypes.STRING,
+      CITY2: DataTypes.STRING,
+      STATE: DataTypes.STRING,
+      STD_CODE: DataTypes.STRING,
+      PHONE: DataTypes.STRING,
     },
     {
       sequelize,
