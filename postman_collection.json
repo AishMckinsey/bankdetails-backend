@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "b1ea2fe8-5cb4-4ffd-856e-2f90b25f6832",
+		"name": "Banking Sytem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBankNames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/bankDetails/getBankNames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"bankDetails",
+						"getBankNames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBranchNames/:bankNames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/bankDetails/getBranchNames/ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"bankDetails",
+						"getBranchNames",
+						"ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIfsc/:bankName/:branchName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/bankDetails/getIfsc/ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED/ABHYUDAYA%20NAGAR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"bankDetails",
+						"getIfsc",
+						"ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED",
+						"ABHYUDAYA%20NAGAR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBankDetails/:ifsc",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
