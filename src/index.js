@@ -6,7 +6,7 @@ const { bankRouter } = require("./routes/bank.routes");
 
 env.config();
 
-const port = process.env.PORT || 3000;
+const port = process.env.DB_PORT || 3000;
 const app = express();
 
 app.use("/health", healthRoutes);

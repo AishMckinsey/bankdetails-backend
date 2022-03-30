@@ -1,3 +1,4 @@
+const req = require("express/lib/request");
 const services = require("../services/bank.service");
 
 const insertBankDetails = async (req, res) => {
@@ -20,7 +21,7 @@ const getBankNames = async (req, res) => {
 
 const getBranchNames = async (req, res) => {
   try {
-    const branchNames = await services.getBranchNames();
+    const branchNames = await services.getBranchNames(req.params.bankNames);
     res.json({ branchNames }).status(200);
   } catch (err) {
     res.json(`There is something wrong here! ${err.message}`).status(500);
@@ -29,7 +30,10 @@ const getBranchNames = async (req, res) => {
 
 const getIfsc = async (req, res) => {
   try {
-    const ifscCode = await services.getIfsc();
+    const ifscCode = await services.getIfsc(
+      req.paramas.bankNames,
+      req.params.branchNames
+    );
     res.json({ ifscCode }).status(200);
   } catch (err) {
     res.json(`There is something wrong here! ${err.message}`).status(500);
@@ -38,7 +42,7 @@ const getIfsc = async (req, res) => {
 
 const getBankDetails = async (req, res) => {
   try {
-    const bankDetails = await services.getBankDetails();
+    const bankDetails = await services.getBankDetails(req.params.ifscCode);
     res.json({ bankDetails }).status(200);
   } catch (err) {
     res.json(`There is something wrong here! ${err.message}`).status(500);
